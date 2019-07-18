@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MediLog</string>
+    <string name="tButton">Stamp</string>
+    <string name="tValue">Date/Time</string>
+</resources>
