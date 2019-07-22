@@ -1,14 +1,14 @@
 package com.jengmedia.medilog;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Log {
 
     private int _id;
-    private String _name;
-    private Date _date;
+    private String _name, _date;
 
-    public Log(int pid,String pname, Date pdate){
+    public Log(int pid,String pname, String pdate){
         this._id = pid;
         this._name = pname;
         this._date = pdate;
@@ -30,11 +30,11 @@ public class Log {
         this._name = _name;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return _date;
     }
 
-    public void setDate(Date _date) {
+    public void setDate(String _date) {
         this._date = _date;
     }
 }
