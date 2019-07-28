@@ -49,10 +49,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     public String getStamps(){
-        String query = "SELECT * FROM " + LOG_T_NAME;
+        String query = "SELECT " + L_DATE + " FROM " + LOG_T_NAME + " ORDER BY " + L_DATE;
         SQLiteDatabase sql = this.getReadableDatabase();
         Cursor c = sql.rawQuery(query, null);
+        int index;
+        String result = "";
+        while(c.moveToNext()) {
+            index = c.getColumnIndexOrThrow(L_DATE);
+            result = c.getString(index);
+        }
 
-        return "" + c.getCount();
+        c.close();
+        return result;
     }
 }
